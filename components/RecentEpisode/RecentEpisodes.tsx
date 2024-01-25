@@ -27,14 +27,14 @@ export default function RecentEpisodes() {
   async function fetchRecentEpisodes() {
     setLoading(true);
     try {
-      let response = await fetch('https://animetrix-api.vercel.app/anime/gogoanime/recent-episodes');
+      let response = await fetch('https://animxer-api-seven.vercel.app//anime/gogoanime/recent-episodes');
       if (!response.ok) throw new Error('Error with first API');
       const data = await response.json();
       setRecentEpisodes(data.results); // Set the episodes directly without modifying the URL
     } catch (error) {
       console.log('First API failed, trying with fallback API');
       try {
-        const responseFallback = await fetch('https://api.consumet.org/anime/gogoanime/recent-episodes');
+        const responseFallback = await fetch('https://animxer-api-seven.vercel.app//anime/gogoanime/recent-episodes');
         if (!responseFallback.ok) throw new Error('Error with fallback API');
         const dataFallback = await responseFallback.json();
         setRecentEpisodes(dataFallback.results); // Set the episodes directly from the fallback API
