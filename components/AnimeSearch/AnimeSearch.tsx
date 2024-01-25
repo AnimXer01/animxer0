@@ -28,7 +28,7 @@ const AnimeSearch: React.FC<AnimeSearchProps> = ({ setQuery: setParentQuery }) =
 
   const performSearch = async () => {
     try {
-      let response = await fetch(`https://api-consumet-org-six.vercel.app/anime/gogoanime/${localQuery}`);
+      let response = await fetch(`https://animxer-api-seven.vercel.app//anime/gogoanime/${localQuery}`);
       if (!response.ok) throw new Error('Error with first API');
       const data = await response.json();
       setAnimeList(filterResults(data.results));
@@ -41,7 +41,7 @@ const AnimeSearch: React.FC<AnimeSearchProps> = ({ setQuery: setParentQuery }) =
   const fetchRecentAnime = async () => {
     try {
       // Fetch and display recent anime or new releases when the search field is empty
-      let response = await fetch('https://api-consumet-org-six.vercel.app/anime/recent');
+      let response = await fetch('https://animxer-api-seven.vercel.app/anime/recent');
       if (!response.ok) throw new Error('Error fetching recent anime');
       const data = await response.json();
       setAnimeList(data.results);
